@@ -1,0 +1,17 @@
+{
+  "rest-client.environmentVariables": {
+    // "$shared": {
+    //   "host": "{{$dotenv HOST}}",
+    //   "port": "{{$dotenv PORT}}"
+    // },
+    "local": {
+      "host": "localhost",
+      "port": "13337",
+      "baseUrl": "http://localhost:13337/api/"
+    }
+    // "production": {
+    //   "host": "{{$shared host}}",
+    //   "port": "{{$shared port}}"
+    // }
+  }
+}

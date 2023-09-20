@@ -1,0 +1,8 @@
+POST {{baseUrl}}auth/local/register
+Content-Type: application/json
+
+{
+  "username":"test1",
+  "password":"123456",
+  "email":"test1@test.com"
+}

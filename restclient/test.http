@@ -1,0 +1,9 @@
+
+
+GET http://{{host}}:{{port}}/api/posts
+
+
+
+###
+
+GET {{baseUrl}}posts
