@@ -1,3 +1,6 @@
+###
+# 注册接口
+
 POST {{baseUrl}}auth/local/register
 Content-Type: application/json
 
@@ -6,3 +9,26 @@ Content-Type: application/json
   "password":"123456",
   "email":"test1@test.com"
 }
+
+
+
+###
+# 登录接口
+
+POST {{baseUrl}}auth/local
+Content-Type: application/json
+
+{
+  "identifier":"test1",
+  "password":"123456"
+}
+
+
+
+  # "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MjAxMzE2LCJleHAiOjE2OTc3OTMzMTZ9.HjuFwOhhS_x6P5INgwnwwgL29SolBDNxYg7jQ-HF7V8",
+
+
+# {
+#   "identifier":"mudssky@gmail.com",
+#   "password":"Admin123456"
+# }
