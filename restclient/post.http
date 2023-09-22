@@ -1,4 +1,4 @@
 
 
 GET {{baseUrl}}posts
-Authorization: {{authToken}}
+Authorization: {{BearerToken}}

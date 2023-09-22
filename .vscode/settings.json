@@ -8,7 +8,7 @@
       "host": "localhost",
       "port": "13337",
       "baseUrl": "http://localhost:13337/api/",
-      "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MjY1MTE1LCJleHAiOjE2OTc4NTcxMTV9.VYrwRs4smB6wtX3x1WYXWRIUEztsx1ZDSEnc1bBMn7o"
+      "BearerToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjk1MjY1MTE1LCJleHAiOjE2OTc4NTcxMTV9.VYrwRs4smB6wtX3x1WYXWRIUEztsx1ZDSEnc1bBMn7o"
     }
     // "production": {
     //   "host": "{{$shared host}}",
