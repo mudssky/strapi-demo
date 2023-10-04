@@ -367,6 +367,7 @@ export interface ApiMeetingRoomMeetingRoom extends Schema.CollectionType {
     singularName: 'meeting-room';
     pluralName: 'meeting-rooms';
     displayName: 'MeetingRoom';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -405,6 +406,18 @@ export interface ApiMeetingRoomMeetingRoom extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    meeting_room_orders: Attribute.Relation<
+      'api::meeting-room.meeting-room',
+      'oneToMany',
+      'api::meeting-room-order.meeting-room-order'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -426,6 +439,44 @@ export interface ApiMeetingRoomMeetingRoom extends Schema.CollectionType {
       'api::meeting-room.meeting-room'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiMeetingRoomOrderMeetingRoomOrder
+  extends Schema.CollectionType {
+  collectionName: 'meeting_room_orders';
+  info: {
+    singularName: 'meeting-room-order';
+    pluralName: 'meeting-room-orders';
+    displayName: 'MeetingRoomOrder';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    date: Attribute.String & Attribute.Required;
+    startTime: Attribute.String & Attribute.Required;
+    endTime: Attribute.String & Attribute.Required;
+    remark: Attribute.Text;
+    meeting_room: Attribute.Relation<
+      'api::meeting-room-order.meeting-room-order',
+      'manyToOne',
+      'api::meeting-room.meeting-room'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::meeting-room-order.meeting-room-order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::meeting-room-order.meeting-room-order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
   };
 }
 
@@ -778,6 +829,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::meeting-room.meeting-room': ApiMeetingRoomMeetingRoom;
+      'api::meeting-room-order.meeting-room-order': ApiMeetingRoomOrderMeetingRoomOrder;
       'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;

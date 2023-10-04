@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meeting_room_orders",
+  "info": {
+    "singularName": "meeting-room-order",
+    "pluralName": "meeting-room-orders",
+    "displayName": "MeetingRoomOrder"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "startTime": {
+      "type": "string",
+      "required": true
+    },
+    "endTime": {
+      "type": "string",
+      "required": true
+    },
+    "remark": {
+      "type": "text"
+    },
+    "meeting_room": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meeting-room.meeting-room",
+      "inversedBy": "meeting_room_orders"
+    }
+  }
+}
